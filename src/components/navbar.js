@@ -9,6 +9,16 @@ import {
     NavLink
 } from 'reactstrap';
 
+import colors from './colors';
+
+const styles ={
+    navLink: {
+        color: colors.lightGreen,
+        marginTop: `15%`
+
+    }
+}
+
 
 export default class MuseumNav extends React.Component {
     constructor(props) {
@@ -16,7 +26,7 @@ export default class MuseumNav extends React.Component {
 
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
-            collapsed: true
+            collapsed: true,
         };
     }
 
@@ -29,13 +39,18 @@ export default class MuseumNav extends React.Component {
     render() {
         return (
             <div>
-                <Navbar light expand="md">
-                    <NavbarBrand href="/" className="mr-auto">Museu Casal Aleixo</NavbarBrand>
+                <Navbar light expand="md" style={{
+                    backgroundColor: colors.lightGray,
+                }}>
+                    <NavbarBrand href="/" className="mr-auto" style={{
+                        color: colors.lightGreen,
+                        fontWeight: `bold`                        
+                    }}>Museu Casal Aleixo</NavbarBrand>
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink href="/page-2" className ="mr-auto py-auto">Page 2</NavLink>
+                                <NavLink href="/page-2" className ="mr-auto py-auto" style={styles.navLink}>Page 2</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
