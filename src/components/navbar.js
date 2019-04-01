@@ -13,8 +13,9 @@ import colors from './colors';
 
 const styles ={
     navLink: {
-        color: colors.lightGreen,
-        marginTop: `15%`
+        color: colors.primary,
+        marginTop: `15%`,
+        
 
     }
 }
@@ -40,10 +41,10 @@ export default class MuseumNav extends React.Component {
         return (
             <div>
                 <Navbar light expand="md" style={{
-                    backgroundColor: colors.lightGray,
+                    backgroundColor: colors.light,
                 }}>
                     <NavbarBrand href="/" className="mr-auto" style={{
-                        color: colors.lightGreen,
+                        color: colors.primary,
                         fontWeight: `bold`                        
                     }}>Museu Casal Aleixo</NavbarBrand>
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
