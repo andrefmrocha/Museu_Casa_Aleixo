@@ -6,7 +6,6 @@ import MuseumNav from "./navbar";
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      marginBottom: `1.45rem`,
     }}
   >
     <MuseumNav/>
