@@ -5,10 +5,11 @@ import Icon from './icon';
 
 const styles = {
     button: {
-        color: colors.primary,
+        color: colors.snow,
         border: `1px solid ${colors.primary}`,
         padding: `10px`,
-        maxWidth: `95%`
+        maxWidth: `95%`,
+        backgroundColor: colors.primary
     }
 }
 
