@@ -1,6 +1,8 @@
 import posed from "react-pose";
+import MyJumbotron from "./MyJumbotron";
 
-const Icon = posed.div({
+
+const Icon = posed(MyJumbotron)({
   hoverable: true,
   pressable: true,
   init: {

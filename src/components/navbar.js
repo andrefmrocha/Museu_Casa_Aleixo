@@ -15,8 +15,6 @@ const styles ={
     navLink: {
         color: colors.primary,
         marginTop: `15%`,
-        
-
     }
 }
 
@@ -42,6 +40,7 @@ export default class MuseumNav extends React.Component {
             <div>
                 <Navbar light expand="md" style={{
                     backgroundColor: colors.light,
+                    marginBottom: `1.5%`
                 }}>
                     <NavbarBrand href="/" className="mr-auto" style={{
                         color: colors.primary,
