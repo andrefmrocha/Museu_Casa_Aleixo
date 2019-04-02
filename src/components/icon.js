@@ -8,8 +8,8 @@ const Icon = posed.div({
     margin: `auto`,
     marginBottom: `2%`
   },
-  hover: { scale: 1.2 },
-  press: { scale: 1.1 }
+  hover: { scale: 1.03 },
+  press: { scale: 1.005 }
 });
 
 export default Icon;
