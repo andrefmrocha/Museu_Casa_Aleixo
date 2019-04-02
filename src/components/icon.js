@@ -5,11 +5,11 @@ const Icon = posed.div({
   pressable: true,
   init: {
     scale: 1,
-    margin: `1%`,
-    display: `inline-block`
+    margin: `auto`,
+    marginBottom: `2%`
   },
-  hover: { scale: 1.4 },
-  press: { scale: 1.2 }
+  hover: { scale: 1.2 },
+  press: { scale: 1.1 }
 });
 
 export default Icon;
