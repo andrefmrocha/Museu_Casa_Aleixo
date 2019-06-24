@@ -12,9 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Presentation/>
-    <Story/>
-    <Services/>
+    <Presentation />
   </Layout>
 )
 

@@ -10,28 +10,40 @@ import {
 import Slide1 from '../images/slide1.jpg'
 import Slide2 from '../images/slide2.jpg'
 import Slide3 from '../images/slide3.jpg'
+import styled from 'styled-components'
 
 
 const items = [
     {
         src: Slide1,
-        altText: 'Slide 1',
-        caption: 'Slide 1',
         header: 'Slide 1 Header'
     },
     {
         src: Slide2,
-        altText: 'Slide 2',
-        caption: 'Slide 2',
         header: 'Slide 2 Header'
     },
     {
         src: Slide3,
-        altText: 'Slide 3',
-        caption: 'Slide 3',
         header: 'Slide 3 Header'
     }
 ];
+
+
+const styles ={
+    carousel: {
+              position: `fixed`,
+              width: `100%`,
+              height: `100%`,
+              zIndex: -99
+        }
+};
+
+const StyledCarousel = styled(Carousel)`
+              position: fixed !important;
+              width: 100%;
+              height: 100%;
+              z-index: -99;
+`;
 
 
 class Presentation extends React.Component {
@@ -88,16 +100,20 @@ class Presentation extends React.Component {
         });
 
         return (
-            <Carousel
-                activeIndex={activeIndex}
-                next={this.next}
-                previous={this.previous}
-            >
-                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-                {slides}
-                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-            </Carousel>
+          <StyledCarousel
+            activeIndex={activeIndex}
+            next={this.next}
+            previous={this.previous}
+          >
+            {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} /> */}
+            {slides}
+            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+            <CarouselControl
+              direction="next"
+              directionText="Next"
+              onClickHandler={this.next}
+            />
+          </StyledCarousel>
         );
     }
 }

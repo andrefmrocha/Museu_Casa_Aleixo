@@ -5,14 +5,12 @@ import Icon from './icon';
 
 const styles = {
   button: {
-    color: colors.snow,
+    color: colors.primary,
     border: `1px solid ${colors.primary}`,
     padding: `10px`,
     maxWidth: `95%`,
-    backgroundColor: colors.primary
   },
-  jumbotron: {
-  }
+  absolute:{position: `absolute`}
 };
 
 class Story extends Component {
@@ -33,9 +31,9 @@ class Story extends Component {
                 <Icon outline onClick={this.toggle} style={styles.button}>
                     Meias
                 </Icon>
-                <Collapse isOpen={this.state.collapse}>
-                    <Card>
-                        <CardBody>
+                <Collapse isOpen={this.state.collapse} style={styles.absolute}>
+                    <Card style={styles.absolute}>
+                        <CardBody style={styles.absolute}>
                             {this.props.children}
                         </CardBody>
                     </Card>
