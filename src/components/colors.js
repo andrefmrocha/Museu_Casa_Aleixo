@@ -1,10 +1,12 @@
 const colors = {
-    primary: `#556E08`,
-    secondary: `#0A122A`,
-    light: `#E3E3E3`,
-    dark: `#698F3F`,
-    contrast: `#735F3D`,
-    snow: `#FBFAF8`
+  primary: `#FFFFFF`,
+  secondary: `#0A122A`,
+  light: `#C5C5C5`,
+  dark: `#707070`,
+  contrast: `#E2C285`,
+  snow: `#E4E4E4`,
+  contrast2: `#D7D7D7`,
+  black: `#000000`
 };
 
 export default colors;
