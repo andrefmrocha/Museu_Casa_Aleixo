@@ -22,16 +22,6 @@ module.exports = {
         "template-curly-spacing": ["error", "always"],
         "arrow-parens": ["error", "as-needed"],
 
-        // standard.js
-        "space-before-function-paren": [
-            "error",
-            {
-                named: "as-needed",
-                anonymous: "as-needed",
-                asyncArrow: "as-needed",
-            },
-        ],
-
         // standard plugin - options
         "standard/object-curly-even-spacing": ["error", "either"],
         "standard/array-bracket-even-spacing": ["error", "either"],

@@ -1,15 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from "./header"
-import "./layout.css"
-import "./colors"
-import colors from "./colors";
+import Header from './header';
+import './layout.css';
+import colors from './colors';
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+    <StaticQuery
+        query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -18,11 +17,11 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+        render={data => (
       <>
         {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
         <div style={{
-          backgroundColor: colors.snow,
+            backgroundColor: colors.snow,
         }}>
             <main>{children}</main>
             {/* <footer>
@@ -32,12 +31,12 @@ const Layout = ({ children }) => (
             </footer> */}
         </div>
       </>
-    )}
-  />
-)
+        )}
+    />
+);
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+    children: PropTypes.node.isRequired,
+};
 
-export default Layout
+export default Layout;

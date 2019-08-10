@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react';
 import {
     Carousel,
     CarouselItem,
     CarouselControl,
-    CarouselIndicators,
     CarouselCaption
 } from 'reactstrap';
 
-import Slide1 from '../images/slide1.jpg'
-import Slide2 from '../images/slide2.jpg'
-import Slide3 from '../images/slide3.jpg'
-import styled from 'styled-components'
-
+import Slide1 from '../images/slide1.jpg';
+import Slide2 from '../images/slide2.jpg';
+import Slide3 from '../images/slide3.jpg';
+import styled from 'styled-components';
 
 const items = [
     {
@@ -28,26 +26,13 @@ const items = [
     }
 ];
 
-
-const styles ={
-    carousel: {
-              position: `fixed`,
-              width: `100%`,
-              height: `100%`,
-              zIndex: -99
-        }
-};
-
 const StyledCarousel = styled(Carousel)`
-              position: fixed !important;
               width: 100%;
-              height: 100%;
-              z-index: -99;
+              height: 50vh;
 `;
 
-
 class Presentation extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.state = { activeIndex: 0 };
         this.next = this.next.bind(this);
@@ -57,66 +42,64 @@ class Presentation extends React.Component {
         this.onExited = this.onExited.bind(this);
     }
 
-    onExiting() {
+    onExiting () {
         this.animating = true;
     }
 
-    onExited() {
+    onExited () {
         this.animating = false;
     }
 
-    next() {
+    next () {
         if (this.animating) return;
         const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
-    previous() {
+    previous () {
         if (this.animating) return;
         const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
-    goToIndex(newIndex) {
+    goToIndex (newIndex) {
         if (this.animating) return;
         this.setState({ activeIndex: newIndex });
     }
 
-
-    render() {
+    render () {
         const { activeIndex } = this.state;
 
-        const slides = items.map((item) => {
+        const slides = items.map(item => {
             return (
                 <CarouselItem
                     onExiting={this.onExiting}
                     onExited={this.onExited}
                     key={item.src}
                 >
-                    <img src={item.src} alt={item.altText}  style={{width: `100%`, height: `70vh`}}/>
+                    <img src={item.src} alt={item.altText} style={{ width: `100%`, height: `50vh` }}/>
                     <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
                 </CarouselItem>
             );
         });
 
         return (
-          <StyledCarousel
-            activeIndex={activeIndex}
-            next={this.next}
-            previous={this.previous}
-          >
-            {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} /> */}
-            {slides}
-            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-            <CarouselControl
-              direction="next"
-              directionText="Next"
-              onClickHandler={this.next}
-            />
-          </StyledCarousel>
+            <StyledCarousel
+                activeIndex={activeIndex}
+                next={this.next}
+                previous={this.previous}
+            >
+                {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} /> */}
+                {slides}
+                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                <CarouselControl
+                    direction="next"
+                    directionText="Next"
+                    onClickHandler={this.next}
+                />
+            </StyledCarousel>
         );
     }
 }
-
 
 export default Presentation;

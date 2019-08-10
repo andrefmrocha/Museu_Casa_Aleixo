@@ -1,17 +1,17 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainPage from "../components/main_page_wrapper"
-
+import MainPageHeader from '../components/main_page_wrapper';
+import MainPageFooter from '../components/main_page_footer';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <MainPage/>
-  </Layout>
-)
+    <Layout>
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <MainPageHeader/>
+        <MainPageFooter/>
+    </Layout>
+);
 
-export default IndexPage
+export default IndexPage;

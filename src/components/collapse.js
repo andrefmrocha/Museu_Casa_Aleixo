@@ -4,28 +4,27 @@ import colors from './colors';
 import Icon from './icon';
 
 const styles = {
-  button: {
-    color: colors.primary,
-    border: `1px solid ${colors.primary}`,
-    padding: `10px`,
-    maxWidth: `95%`,
-  },
-  absolute:{position: `absolute`}
+    button: {
+        color: colors.primary,
+        border: `1px solid ${ colors.primary }`,
+        padding: `10px`,
+        maxWidth: `95%`,
+    },
+    absolute: { position: `absolute` }
 };
 
 class Story extends Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.state = { collapse: false};
+        this.state = { collapse: false };
     }
 
-    toggle() {
+    toggle () {
         this.setState(state => ({ collapse: !state.collapse }));
     }
 
-
-    render() {
+    render () {
         return (
             <div>
                 <Icon outline onClick={this.toggle} style={styles.button}>
