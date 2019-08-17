@@ -8,7 +8,7 @@ const styles = {
         color: colors.primary,
         border: `1px solid ${ colors.primary }`,
         padding: `10px`,
-        maxWidth: `95%`,
+        maxWidth: `95%`
     },
     absolute: { position: `absolute` }
 };
@@ -28,13 +28,11 @@ class Story extends Component {
         return (
             <div>
                 <Icon outline onClick={this.toggle} style={styles.button}>
-                    Meias
+          Meias
                 </Icon>
                 <Collapse isOpen={this.state.collapse} style={styles.absolute}>
                     <Card style={styles.absolute}>
-                        <CardBody style={styles.absolute}>
-                            {this.props.children}
-                        </CardBody>
+                        <CardBody style={styles.absolute}>{this.props.children}</CardBody>
                     </Card>
                 </Collapse>
             </div>

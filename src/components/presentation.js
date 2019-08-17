@@ -3,13 +3,16 @@ import {
     Carousel,
     CarouselItem,
     CarouselControl,
-    CarouselCaption
+    CarouselCaption,
+    CarouselIndicators
 } from 'reactstrap';
 
 import Slide1 from '../images/slide1.jpg';
 import Slide2 from '../images/slide2.jpg';
 import Slide3 from '../images/slide3.jpg';
 import styled from 'styled-components';
+import '../styles/reacstrap.css';
+import colors from './colors';
 
 const items = [
     {
@@ -27,8 +30,8 @@ const items = [
 ];
 
 const StyledCarousel = styled(Carousel)`
-              width: 100%;
-              height: 50vh;
+  width: 100%;
+  height: 50vh;
 `;
 
 class Presentation extends React.Component {
@@ -52,13 +55,19 @@ class Presentation extends React.Component {
 
     next () {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex =
+      this.state.activeIndex === items.length - 1
+          ? 0
+          : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     previous () {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+        const nextIndex =
+      this.state.activeIndex === 0
+          ? items.length - 1
+          : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
@@ -67,39 +76,84 @@ class Presentation extends React.Component {
         this.setState({ activeIndex: newIndex });
     }
 
-    render () {
-        const { activeIndex } = this.state;
+  frontText = (
+    <div
+        style={{
+            position: `absolute`,
+            zIndex: `1000`,
+            color: colors.primary,
+            width: `100%`,
+            height: `50vh`,
+            fontSize: `7vmin`,
+            fontFamily: 'Minion Pro',
+            textAlign: `center`,
+            verticalAlign: `middle`,
+            lineHeight: `50vh`
+        }}
+    >
+      Brevemente!
+    </div>
+  );
 
-        const slides = items.map(item => {
-            return (
-                <CarouselItem
-                    onExiting={this.onExiting}
-                    onExited={this.onExited}
-                    key={item.src}
-                >
-                    <img src={item.src} alt={item.altText} style={{ width: `100%`, height: `50vh` }}/>
-                    <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-                </CarouselItem>
-            );
-        });
+  render () {
+      const { activeIndex } = this.state;
 
-        return (
-            <StyledCarousel
-                activeIndex={activeIndex}
-                next={this.next}
-                previous={this.previous}
-            >
-                {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} /> */}
-                {slides}
-                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                <CarouselControl
-                    direction="next"
-                    directionText="Next"
-                    onClickHandler={this.next}
-                />
-            </StyledCarousel>
-        );
-    }
+      const slides = items.map(item => {
+          return (
+              <CarouselItem
+                  onExiting={this.onExiting}
+                  onExited={this.onExited}
+                  key={item.src}
+              >
+                  <img
+                      src={item.src}
+                      alt={item.altText}
+                      style={{
+                          width: `100%`,
+                          height: `50vh`,
+                          display: `block`,
+                          marginRight: `auto`,
+                          marginLeft: `auto`,
+                          filter: `blur(5px)`,
+                          WebkitFilter: `blur(5px)`
+                      }}
+                  />
+              </CarouselItem>
+          );
+      });
+
+      return (
+          <div>
+              {this.frontText}
+              <StyledCarousel
+                  activeIndex={activeIndex}
+                  next={this.next}
+                  previous={this.previous}
+              >
+                  <CarouselIndicators
+                      items={items}
+                      activeIndex={activeIndex}
+                      onClickHandler={this.goToIndex}
+                      cssModule={{
+                          width: `50%`
+                      }}
+                  />
+
+                  {slides}
+                  <CarouselControl
+                      direction="prev"
+                      directionText="Previous"
+                      onClickHandler={this.previous}
+                  />
+                  <CarouselControl
+                      direction="next"
+                      directionText="Next"
+                      onClickHandler={this.next}
+                  />
+              </StyledCarousel>
+          </div>
+      );
+  }
 }
 
 export default Presentation;

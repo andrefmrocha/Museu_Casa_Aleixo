@@ -11,10 +11,10 @@ const styles = {
     },
     headerInfo: {
         height: `14vh`,
-        display: `block`,
+        display: `block`
     },
     headerTitle: {
-        color: Colors.primary,
+        color: Colors.primary
     }
 };
 
@@ -46,7 +46,11 @@ const Wrapper = () => (
                             forceSingleModeWidth={false}
                             style={{
                                 ...styles.headerTitle,
-                                ...{ marginBottom: `0px`, height: `40%` }
+                                ...{
+                                    marginBottom: `0px`,
+                                    height: `40%`,
+                                    fontFamily: `Minion Pro`
+                                }
                             }}
                         >
               Museu Casa
@@ -56,7 +60,7 @@ const Wrapper = () => (
                             forceSingleModeWidth={false}
                             style={{
                                 ...styles.headerTitle,
-                                ...{ fontSize: `4vw`, height: `60%` }
+                                ...{ height: `60%`, fontFamily: `Dandeleon` }
                             }}
                         >
               Aleixo

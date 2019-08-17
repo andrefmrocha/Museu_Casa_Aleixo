@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Minion Pro';
+    src: url('../fonts/MinionPro-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Minion Pro';
+    src: url('../fonts/MinionPro-Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Dandeleon';
+    src: url('../fonts/DandeleonVintageDemo.otf') format('opentype'),
+         url('../fonts/DandeleonVintageDemo.ttf') format('truetype');
+    font-weight: bold;
+}

@@ -4,20 +4,17 @@ import React from 'react';
 import MuseumNav from './navbar';
 
 const Header = ({ siteTitle }) => (
-    <header
-        style={{
-        }}
-    >
-        <MuseumNav/>
+    <header style={{}}>
+        <MuseumNav />
     </header>
 );
 
 Header.propTypes = {
-    siteTitle: PropTypes.string,
+    siteTitle: PropTypes.string
 };
 
 Header.defaultProps = {
-    siteTitle: ``,
+    siteTitle: ``
 };
 
 export default Header;

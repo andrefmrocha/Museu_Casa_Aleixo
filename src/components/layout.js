@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
 import './layout.css';
 import colors from './colors';
 
@@ -20,9 +19,11 @@ const Layout = ({ children }) => (
         render={data => (
       <>
         {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-        <div style={{
-            backgroundColor: colors.snow,
-        }}>
+        <div
+            style={{
+                backgroundColor: colors.snow
+            }}
+        >
             <main>{children}</main>
             {/* <footer>
               © {new Date().getFullYear()}, Built with
@@ -36,7 +37,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired
 };
 
 export default Layout;

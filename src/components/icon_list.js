@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Facebook from '../images/facebook.png';
 import Airbnb from '../images/airbnb.png';
 import Booking from '../images/booking.png';
@@ -22,19 +22,18 @@ const items = [
 
 export default class IconList extends React.Component {
     render () {
-        const size = 'auto';
         const icons = items.map(item => {
             return (
-                <a href={item.link} style={{ paddingBottom: `10px` }}>
-                    <img src={item.src} style={{ width: size, height: size }}/>
-                </a>
+                <Col key={item.link} style={{ paddingRight: 0, paddingLeft: 0 }}>
+                    <a href={item.link}>
+                        <img src={item.src} style={{ maxWidth: `85%`, height: `auto` }} />
+                    </a>
+                </Col>
             );
         });
         return (
-            <Container style={{ maxHeight: `100%`, paddingBottom: `10px` }}>
-                <Row style={{ height: `40%`, flexWrap: `unset`, WebkitFlexWrap: `unset`, marginBottom: `10px` }}>
-                    {icons}
-                </Row>
+            <Container style={{ height: `100%` }}>
+                <Row style={{ height: `100%` }}>{icons}</Row>
             </Container>
         );
     }

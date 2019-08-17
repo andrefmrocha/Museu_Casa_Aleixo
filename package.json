@@ -19,6 +19,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.7.0",
     "react-pose": "^4.0.8",
     "react-textfit": "^1.1.0",
     "reactstrap": "^7.1.0",
@@ -33,7 +34,9 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "lint": "eslint --ext .jsx --ext .js --quiet .",
+    "lint-fix": "eslint --ext .jsx --ext .js --quiet --fix ."
   },
   "repository": {
     "type": "git",
