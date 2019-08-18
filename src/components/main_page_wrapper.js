@@ -11,7 +11,8 @@ const styles = {
     },
     headerInfo: {
         height: `14vh`,
-        display: `block`
+        display: `block`,
+        maxWidth: `100%`
     },
     headerTitle: {
         color: Colors.primary

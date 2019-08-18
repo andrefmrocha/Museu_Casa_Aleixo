@@ -34,10 +34,10 @@ const StyledCarousel = styled(Carousel)`
   height: 50vh;
 `;
 
-class Presentation extends React.Component {
+class Presentation extends React.PureComponent {
     constructor (props) {
         super(props);
-        this.state = { activeIndex: 0 };
+        this.state = { activeIndex: 0, carouselImage: 'carousel-image' };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.goToIndex = this.goToIndex.bind(this);
@@ -76,84 +76,90 @@ class Presentation extends React.Component {
         this.setState({ activeIndex: newIndex });
     }
 
-  frontText = (
-    <div
-        style={{
-            position: `absolute`,
-            zIndex: `1000`,
-            color: colors.primary,
-            width: `100%`,
-            height: `50vh`,
-            fontSize: `7vmin`,
-            fontFamily: 'Minion Pro',
-            textAlign: `center`,
-            verticalAlign: `middle`,
-            lineHeight: `50vh`
-        }}
-    >
-      Brevemente!
-    </div>
-  );
+    mouseHover = () => {
+        this.setState({
+            carouselImage: 'carousel-image hovered'
+        });
+    }
 
-  render () {
-      const { activeIndex } = this.state;
+    mouseLeaving = () => {
+        this.setState({
+            carouselImage: 'carousel-image'
+        });
+    }
 
-      const slides = items.map(item => {
-          return (
-              <CarouselItem
-                  onExiting={this.onExiting}
-                  onExited={this.onExited}
-                  key={item.src}
-              >
-                  <img
-                      src={item.src}
-                      alt={item.altText}
-                      style={{
-                          width: `100%`,
-                          height: `50vh`,
-                          display: `block`,
-                          marginRight: `auto`,
-                          marginLeft: `auto`,
-                          filter: `blur(5px)`,
-                          WebkitFilter: `blur(5px)`
-                      }}
-                  />
-              </CarouselItem>
-          );
-      });
+    frontText = (
+        <div
+            style={{
+                position: `absolute`,
+                zIndex: `2`,
+                color: colors.primary,
+                width: `100%`,
+                height: `50vh`,
+                fontSize: `7vmin`,
+                fontFamily: 'Minion Pro',
+                textAlign: `center`,
+                verticalAlign: `middle`,
+                lineHeight: `50vh`
+            }}
+            onMouseOver={this.mouseHover}
+            onMouseOut={this.mouseLeaving}
+        >
+        Brevemente!
+        </div>
+    );
 
-      return (
-          <div>
-              {this.frontText}
-              <StyledCarousel
-                  activeIndex={activeIndex}
-                  next={this.next}
-                  previous={this.previous}
-              >
-                  <CarouselIndicators
-                      items={items}
-                      activeIndex={activeIndex}
-                      onClickHandler={this.goToIndex}
-                      cssModule={{
-                          width: `50%`
-                      }}
-                  />
+    render () {
+        const { activeIndex, carouselImage } = this.state;
 
-                  {slides}
-                  <CarouselControl
-                      direction="prev"
-                      directionText="Previous"
-                      onClickHandler={this.previous}
-                  />
-                  <CarouselControl
-                      direction="next"
-                      directionText="Next"
-                      onClickHandler={this.next}
-                  />
-              </StyledCarousel>
-          </div>
-      );
-  }
+        const slides = items.map(item => {
+            return (
+                <CarouselItem
+                    onExiting={this.onExiting}
+                    onExited={this.onExited}
+                    key={item.src}
+                >
+                    <img
+                        src={item.src}
+                        alt={item.altText}
+                        className={carouselImage}
+                    />
+                </CarouselItem>
+            );
+        });
+
+        return (
+            <div>
+                {this.frontText}
+                <StyledCarousel
+                    activeIndex={activeIndex}
+                    next={this.next}
+                    previous={this.previous}
+                >
+                    <CarouselIndicators
+                        items={items}
+                        activeIndex={activeIndex}
+                        onClickHandler={this.goToIndex}
+                        cssModule={{
+                            width: `50%`,
+                        }}
+                    />
+
+                    {slides}
+                    <CarouselControl
+                        direction="prev"
+                        directionText="Previous"
+                        onClickHandler={this.previous}
+                    />
+                    <CarouselControl
+                        direction="next"
+                        directionText="Next"
+                        onClickHandler={this.next}
+                    />
+                </StyledCarousel>
+            </div>
+        );
+    }
 }
 
 export default Presentation;

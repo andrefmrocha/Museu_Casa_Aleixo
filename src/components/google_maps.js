@@ -4,7 +4,10 @@ const size = `30vh`;
 const mapsApi = {
     width: size,
     height: size,
-    border: `0`
+    border: `0`,
+    lineHeight: size,
+    verticalAlign: `middle`,
+    textAlign: `center`
 };
 
 const GoogleMaps = () => (

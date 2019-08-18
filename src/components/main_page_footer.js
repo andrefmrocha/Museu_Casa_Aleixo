@@ -9,7 +9,8 @@ const styles = {
         fontFamily: `Minion Pro`
     },
     footerContainer: {
-        marginTop: `3vh`
+        marginTop: `3vh`,
+        maxWidth: `100%`
     },
     textDiv: {
         fontWeight: `bold`,

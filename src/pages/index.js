@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainPageHeader from '../components/main_page_wrapper';
 import MainPageFooter from '../components/main_page_footer';
-import '../styles/font.css';
+import '../styles/index.css';
 
 const IndexPage = () => (
     <Layout>

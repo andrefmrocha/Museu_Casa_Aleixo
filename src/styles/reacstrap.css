@@ -2,9 +2,11 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
+  z-index: 200;
 }
 
 .carousel-control-next,
 .carousel-control-prev {
-    opacity: 0;
+  opacity: 0;
+  z-index: 200;
 }
