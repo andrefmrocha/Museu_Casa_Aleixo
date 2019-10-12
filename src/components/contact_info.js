@@ -13,6 +13,9 @@ const styles = {
     },
     icons: {
         paddingRight: `0.5em`
+    },
+    contentRow: {
+        justifyContent: `center`
     }
 };
 
@@ -21,16 +24,16 @@ const ContactInfo = () => (
         maxWidth: `100%`
     }}>
         <Col>
-            <Row>
+            <Row style={styles.contentRow}>
                 <ImageWrapper image={FooterImage} />
             </Row>
-            <Row>
+            <Row style={styles.contentRow}>
                 <div style={styles.icons}>
                     <FaRegEnvelope />
                 </div>
                 <div style={styles.contactInfo}>museucasaaleixo@gmail.com</div>
             </Row>
-            <Row>
+            <Row style={styles.contentRow}>
                 <div style={styles.icons}>
                     <FaPhone />
                 </div>

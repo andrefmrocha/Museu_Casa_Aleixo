@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Facebook from '../images/facebook.png';
 import Airbnb from '../images/airbnb.png';
 import Booking from '../images/booking.png';
+import IconCarousel from './icon-carousel';
 
 const items = [
     {
@@ -25,7 +26,7 @@ export default class IconList extends React.Component {
         const icons = items.map(item => {
             return (
                 <Col key={item.link} style={{ paddingRight: 0, paddingLeft: 0 }}>
-                    <a href={item.link}>
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
                         <img src={item.src} style={{ maxWidth: `85%`, height: `auto` }} />
                     </a>
                 </Col>
@@ -33,7 +34,12 @@ export default class IconList extends React.Component {
         });
         return (
             <Container style={{ height: `100%` }}>
-                <Row style={{ height: `100%` }}>{icons}</Row>
+                <span className="icon-row">
+                    <Row style={{ height: `100%` }} >{icons}</Row>
+                </span>
+                <span className="icon-carousel">
+                    <div><IconCarousel items={items} /></div>
+                </span>
             </Container>
         );
     }

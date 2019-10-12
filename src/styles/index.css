@@ -31,3 +31,16 @@
     filter: blur(0);
     -webkit-filter: blur(0);
 }
+
+.icon-carousel{
+    display: none;
+}
+
+@media (max-width: 800px){
+    .icon-row{
+        display: none;
+    }
+    .icon-carousel{
+        display: inline-block;
+    }
+}
