@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+        title: `Museu Casa Aleixo`,
+        description: `O Museu Casa Aleixo é um empreendimento de turismo, constituído por edifícios de arquitetura antiga e moderna, onde pode desfrutar de grande variedade de culturas agrícolas, de uma piscina e jardins para o seu lazer.`,
         author: `@gatsbyjs`
     },
     plugins: [
