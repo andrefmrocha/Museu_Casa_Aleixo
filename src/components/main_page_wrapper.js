@@ -4,7 +4,7 @@ import Colors from './colors';
 import IconList from './icon_list';
 import { Container, Row, Col } from 'reactstrap';
 import { Textfit } from 'react-textfit';
-
+import Title from './title';
 const styles = {
     header: {
         backgroundColor: `#E2C285`
@@ -50,22 +50,14 @@ const Wrapper = () => (
                                 ...{
                                     marginBottom: `0px`,
                                     height: `40%`,
-                                    fontFamily: `Minion Pro`
+                                    fontFamily: `Minion Pro`,
+                                    fontSize: `1.8em`
                                 }
                             }}
                         >
-              Museu Casa
+                            Museu Casa
                         </Textfit>
-                        <Textfit
-                            mode="single"
-                            forceSingleModeWidth={false}
-                            style={{
-                                ...styles.headerTitle,
-                                ...{ height: `60%`, fontFamily: `Dandeleon` }
-                            }}
-                        >
-              Aleixo
-                        </Textfit>
+                        <Title headerTitle={styles.headerTitle} />
                     </div>
                 </Col>
                 <Col xs="4" sm="4" style={{ maxHeight: `100%` }}>

@@ -27,13 +27,13 @@ export default class IconList extends React.Component {
             return (
                 <Col key={item.link} style={{ paddingRight: 0, paddingLeft: 0 }}>
                     <a href={item.link} target="_blank" rel="noopener noreferrer">
-                        <img src={item.src} style={{ maxWidth: `85%`, height: `auto` }} />
+                        <img src={item.src} style={{ maxWidth: `85%`, height: `auto`, maxHeight: `14vh` }} />
                     </a>
                 </Col>
             );
         });
         return (
-            <Container style={{ height: `100%` }}>
+            <Container style={{ height: `14vh` }}>
                 <span className="icon-row">
                     <Row style={{ height: `100%` }} >{icons}</Row>
                 </span>

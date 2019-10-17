@@ -25,6 +25,7 @@
     margin-left: auto;
     filter: blur(5px);
     -webkit-filter: blur(5px);
+    object-fit: cover;
 }
 
 .carousel-image.hovered {

@@ -6,9 +6,9 @@ import {
     CarouselIndicators
 } from 'reactstrap';
 
-import Slide1 from '../images/slide1.jpg';
-import Slide2 from '../images/slide2.jpg';
-import Slide3 from '../images/slide3.jpg';
+import Slide1 from '../images/breakfast.jpg';
+import Slide2 from '../images/museu-bar.jpg';
+import Slide3 from '../images/bedroom.jpg';
 import styled from 'styled-components';
 import '../styles/reacstrap.css';
 import colors from './colors';
@@ -16,7 +16,7 @@ import colors from './colors';
 const items = [
     {
         src: Slide1,
-        header: 'Slide 1 Header'
+        header: 'Slide 1 Header',
     },
     {
         src: Slide2,
@@ -24,7 +24,10 @@ const items = [
     },
     {
         src: Slide3,
-        header: 'Slide 3 Header'
+        header: 'Slide 3 Header',
+        styles: {
+            objectPosition: `50% 80%`
+        }
     }
 ];
 
@@ -122,6 +125,7 @@ class Presentation extends React.PureComponent {
                         src={item.src}
                         alt={item.altText}
                         className={carouselImage}
+                        style={item.styles}
                     />
                 </CarouselItem>
             );
