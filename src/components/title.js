@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from 'reactstrap';
 import { Textfit } from 'react-textfit';
 import { FaPagelines } from 'react-icons/fa';
 
