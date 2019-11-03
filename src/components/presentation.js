@@ -77,40 +77,6 @@ class Presentation extends React.PureComponent {
         if (this.animating) return;
         this.setState({ activeIndex: newIndex });
     }
-
-    mouseHover = () => {
-        this.setState({
-            carouselImage: 'carousel-image hovered'
-        });
-    }
-
-    mouseLeaving = () => {
-        this.setState({
-            carouselImage: 'carousel-image'
-        });
-    }
-
-    frontText = (
-        <div
-            style={{
-                position: `absolute`,
-                zIndex: `2`,
-                color: colors.primary,
-                width: `100%`,
-                height: `50vh`,
-                fontSize: `7vmin`,
-                fontFamily: 'Minion Pro',
-                textAlign: `center`,
-                verticalAlign: `middle`,
-                lineHeight: `50vh`
-            }}
-            onMouseOver={this.mouseHover}
-            onMouseOut={this.mouseLeaving}
-        >
-        Brevemente!
-        </div>
-    );
-
     render () {
         const { activeIndex, carouselImage } = this.state;
 
@@ -133,7 +99,6 @@ class Presentation extends React.PureComponent {
 
         return (
             <div>
-                {this.frontText}
                 <StyledCarousel
                     activeIndex={activeIndex}
                     next={this.next}
